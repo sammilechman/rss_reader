@@ -1,8 +1,8 @@
-<h3>RSS Feeds</h3>
+<h3>RSS Feed</h3>
 
 <% @entries.each do |entry| %>
   <div class='entry'>
-    <h4><%= link_to entry.title, entry.url %></h4>
-    <h6><%= Feed.readable_date entry.published %> - Posted by <%= entry.author %> at <%= entry.url %></h6>
+    <h1><%= entry.title %></h1>
+    <h6><%= Feed.readable_date entry.published %> - Posted by <%= entry.author %> at <%= link_to entry.url %></h6>
   </div>
 <% end %>
