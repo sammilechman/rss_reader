@@ -3,6 +3,6 @@
 <% @entries.each do |entry| %>
   <div class='entry'>
     <h1><%= entry.title %></h1>
-    <h6><%= Feed.readable_date entry.published %> - Posted by <%= entry.author %> at <%= link_to entry.url %></h6>
+    <h6><%= Feed.readable_date entry.published %> - Posted by <%= Feed.author(entry.author) %> at<br /><%= link_to "#{entry.url[0,65] + "..."}", entry.url %></h6><br />
   </div>
 <% end %>

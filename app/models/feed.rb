@@ -1,5 +1,5 @@
 class Feed < ActiveRecord::Base
-  URLS = %w[https://scotthelme.co.uk/rss/ https://www.schneier.com/blog/atom.xml]
+  URLS = %w[https://scotthelme.co.uk/rss/ https://www.schneier.com/blog/atom.xml http://feeds.wired.com/WiredDangerRoom]
 
   def self.feeds
     [].tap do |feeds|
@@ -19,5 +19,9 @@ class Feed < ActiveRecord::Base
 
   def self.readable_date(date)
     date.strftime("%A, %b %d")
+  end
+
+  def self.author(author)
+    author || "Unknown"
   end
 end
