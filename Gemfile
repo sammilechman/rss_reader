@@ -39,3 +39,9 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'feedjira'
+
+group :development do
+  gem 'pry-rails'
+  gem 'binding_of_caller'
+  gem 'better_errors'
+end
