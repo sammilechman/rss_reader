@@ -1,5 +1,5 @@
 class Feed < ActiveRecord::Base
-  URLS = %w[https://scotthelme.co.uk/rss/ https://www.schneier.com/blog/atom.xml http://feeds.wired.com/WiredDangerRoom]
+  URLS = %w[https://scotthelme.co.uk/rss/ https://www.schneier.com/blog/atom.xml http://feeds.wired.com/WiredDangerRoom http://feeds.wired.com/wired27b http://feeds2.feedburner.com/RogersInfosecBlog http://www.darkreading.com/rss_simple.asp http://krebsonsecurity.com/feed/ http://dankaminsky.com/feed/]
 
   def self.feeds
     [].tap do |feeds|
@@ -23,5 +23,11 @@ class Feed < ActiveRecord::Base
 
   def self.author(author)
     author || "Unknown"
+  end
+
+  def self.links_array
+    URLS.each do
+      fail
+    end
   end
 end
